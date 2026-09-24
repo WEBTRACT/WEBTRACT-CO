@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Contact | Webtract.CO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(194, 170, 112, 0.2);
+            background: #050505;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #c2aa70;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #c2aa70;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+        }
+
+        .contact-box {
+            max-width: 700px;
+        }
+
+        .contact small {
+            color: #c2aa70;
+            letter-spacing: 4px;
+        }
+
+        .contact h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            margin: 20px 0;
+        }
+
+        .contact p {
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid #c2aa70;
+            color: #c2aa70;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #c2aa70;
+            color: #050505;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            WEBTRACT.CO
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#how-it-works">How It Works</a>
+        </div>
+
+    </nav>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact">
+
+        <div class="contact-box">
+
+            <small>GET IN TOUCH</small>
+
+            <h1>Let's talk.</h1>
+
+            <p>
+                Have a business that needs a professional website?
+                Speak with a Webtract consultant and let's discuss
+                what you need.
+            </p>
+
+            <a
+                href="https://wa.me/27786350274"
+                target="_blank"
+                class="button">
+                Speak to a Consultant
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Webtract.CO. All rights reserved.
+
+    </footer>
+
+</body>
+</html>
