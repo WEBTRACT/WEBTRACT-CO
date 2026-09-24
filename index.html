@@ -3,14 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webtract</title>
+
+    <title>Webtract.CO | Websites That Move Businesses Forward</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(180, 154, 90, 0.2);
+            position: sticky;
+            top: 0;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #c2aa70;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #c2aa70;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+            background:
+                radial-gradient(circle at center, rgba(180, 154, 90, 0.12), transparent 45%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero small {
+            color: #c2aa70;
+            letter-spacing: 4px;
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin: 25px 0;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #c2aa70;
+        }
+
+        .hero p {
+            color: #b8b8b8;
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 30px;
+            border: 1px solid #c2aa70;
+            color: #c2aa70;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #c2aa70;
+            color: #050505;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title small {
+            color: #c2aa70;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #b8b8b8;
+            font-size: 18px;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .service {
+            padding: 40px 30px;
+            border: 1px solid rgba(194, 170, 112, 0.25);
+            background: #090909;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            border-color: #c2aa70;
+        }
+
+        .service h3 {
+            color: #c2aa70;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .service p {
+            color: #999999;
+        }
+
+        /* HOW IT WORKS */
+
+        .steps {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .step-number {
+            color: #c2aa70;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 5px;
+        }
+
+        .step p {
+            color: #999999;
+        }
+
+        /* CONSULTANT */
+
+        .consultant {
+            text-align: center;
+            background: #090909;
+            border-top: 1px solid rgba(194, 170, 112, 0.2);
+            border-bottom: 1px solid rgba(194, 170, 112, 0.2);
+        }
+
+        .consultant h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .consultant p {
+            color: #999999;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 35px 7%;
+            color: #666666;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .consultant h2 {
+                font-size: 35px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>WEBTRACT</h1>
+    <!-- NAVIGATION -->
 
-    <p>Professional websites built for modern businesses.</p>
+    <nav>
+        <div class="logo">WEBTRACT.CO</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <small>WEBTRACT.CO</small>
+
+            <h1>
+                Websites built to<br>
+                <span>move businesses.</span>
+            </h1>
+
+            <p>
+                We create modern, professional websites designed around
+                your business and your customers.
+            </p>
+
+            <a href="#services" class="button">
+                Explore Our Services
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <div class="section-title">
+            <small>WHO WE ARE</small>
+            <h2>What We Do</h2>
+        </div>
+
+        <div class="about">
+
+            <p>
+                Webtract.CO helps businesses establish a strong presence
+                online through modern, professional websites. We combine
+                clean design, functionality and technology to create
+                websites that represent your business properly.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="section-title">
+            <small>WHAT WE OFFER</small>
+            <h2>Our Services</h2>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service">
+                <h3>Website Development</h3>
+                <p>
+                    Professional websites built specifically around
+                    your business and its needs.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Website Design</h3>
+                <p>
+                    Modern and responsive designs that look great
+                    across phones, tablets and computers.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Website Maintenance</h3>
+                <p>
+                    Ongoing support to keep your website updated,
+                    functional and running smoothly.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how-it-works">
+
+        <div class="section-title">
+            <small>OUR PROCESS</small>
+            <h2>How It Works</h2>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">01</div>
+
+                <div>
+                    <h3>Speak With Us</h3>
+                    <p>
+                        Tell us about your business and what you
+                        want your website to achieve.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="step">
+                <div class="step-number">02</div>
+
+                <div>
+                    <h3>We Build</h3>
+                    <p>
+                        We design and develop your website around
+                        your business and preferences.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="step">
+                <div class="step-number">03</div>
+
+                <div>
+                    <h3>We Launch</h3>
+                    <p>
+                        Once everything is ready, your website is
+                        published and made available online.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPEAK TO CONSULTANT -->
+
+    <section class="consultant">
+
+        <h2>Ready to get online?</h2>
+
+        <p>
+            Speak with a Webtract consultant about your business.
+        </p>
+
+        <!-- TEMPORARY NUMBER — WE WILL REPLACE THIS -->
+
+        <a
+            href="https://wa.me/27750000000"
+            target="_blank"
+            class="button">
+            Speak to a Consultant
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Webtract.CO. All rights reserved.
+
+    </footer>
+
 
 </body>
 </html>
