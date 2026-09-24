@@ -269,10 +269,56 @@
                 font-size: 35px;
             }
         }
+  /* LOGO INTRO ANIMATION */
+
+#logo-intro {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: introFadeOut 0.7s ease 1.3s forwards;
+}
+
+#logo-intro img {
+    width: 100%;
+    max-width: 900px;
+    height: 140px;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    animation: logoFadeIn 0.8s ease forwards;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes introFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}      
     </style>
 </head>
 
 <body>
+    <!-- WEBTRACT LOGO INTRO -->
+
+<div id="logo-intro">
+    <img src="webtract-logo.jpeg" alt="Webtract.CO Logo">
+</div>
 
     <!-- NAVIGATION -->
 
@@ -462,6 +508,14 @@
 
     </footer>
 
+<script>
+    setTimeout(function () {
+        const intro = document.getElementById("logo-intro");
 
+        if (intro) {
+            intro.style.display = "none";
+        }
+    }, 2000);
+</script>
 </body>
 </html>
